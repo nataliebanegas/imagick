@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>Imagick.Image.Create</title>
+        <style type='text/css'>
+            body {font-family: verdana}
+        </style>
+	</head>
+	<body>
+	    <h1>Imagick.Image.Create Demo</h1>
+		<form id='create' action=''></form>
+		<div id='images'></div>
+		<script type='text/javascript' 
+                src='../../../steal/steal.js'>
+        </script>
+		<script type='text/javascript'>
+			steal('imagick/image/create','imagick/fixtures',function(){
+				
+				$('#create').imagick_image_create();
+				Imagick.Models.Image.bind('created', function(ev, image){
+					$('<div>').html("<h3>"+image.name+"</h3><p>"+image.description+"</p>")
+					        .appendTo( $('#images') )
+				})
+				
+			})
+		</script>
+	</body>
+</html>
