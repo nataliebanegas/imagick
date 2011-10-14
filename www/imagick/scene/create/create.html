@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>Imagick.Scene.Create</title>
+        <style type='text/css'>
+            body {font-family: verdana}
+        </style>
+	</head>
+	<body>
+	    <h1>Imagick.Scene.Create Demo</h1>
+		<form id='create' action=''></form>
+		<div id='scenes'></div>
+		<script type='text/javascript' 
+                src='../../../steal/steal.js'>
+        </script>
+		<script type='text/javascript'>
+			steal('imagick/scene/create','imagick/fixtures',function(){
+				
+				$('#create').imagick_scene_create();
+				Imagick.Models.Scene.bind('created', function(ev, scene){
+					$('<div>').html("<h3>"+scene.name+"</h3><p>"+scene.description+"</p>")
+					        .appendTo( $('#scenes') )
+				})
+				
+			})
+		</script>
+	</body>
+</html>

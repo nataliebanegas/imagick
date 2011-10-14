@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>Imagick.Renderer.Create</title>
+        <style type='text/css'>
+            body {font-family: verdana}
+        </style>
+	</head>
+	<body>
+	    <h1>Imagick.Renderer.Create Demo</h1>
+		<form id='create' action=''></form>
+		<div id='renderers'></div>
+		<script type='text/javascript' 
+                src='../../../steal/steal.js'>
+        </script>
+		<script type='text/javascript'>
+			steal('imagick/renderer/create','imagick/fixtures',function(){
+				
+				$('#create').imagick_renderer_create();
+				Imagick.Models.Renderer.bind('created', function(ev, renderer){
+					$('<div>').html("<h3>"+renderer.name+"</h3><p>"+renderer.description+"</p>")
+					        .appendTo( $('#renderers') )
+				})
+				
+			})
+		</script>
+	</body>
+</html>

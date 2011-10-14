@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>Imagick.Camera.List Demo</title>
+        <style type='text/css'>
+            body {font-family: verdana}
+        </style>
+	</head>
+	<body>
+	    <h1>Imagick.Camera.List Demo</h1>
+		<ul id='cameras'></ul>
+		<a href='javascript://' id='create'>Create Camera</a>
+		<script type='text/javascript' 
+                src='../../../steal/steal.js'>
+        </script>
+		<script type='text/javascript'>
+			steal('imagick/camera/list','imagick/fixtures',function(){
+				
+				$('#cameras').imagick_camera_list();
+				
+				$('#create').click(function(){
+					new Imagick.Models.Camera({
+						name: "Grilled Cheese",
+						description: "Bread and Cheese"
+					}).save();
+				})
+			})
+		</script>
+	</body>
+</html>
