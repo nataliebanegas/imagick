@@ -1,0 +1,5 @@
+<%for(var i = 0; i < this.length ; i++){%>
+	<li <%= this[i]%>>
+		<%== $.View('//imagick/image_frame/list/views/image_frame.ejs', this[i] )%>
+	</li>
+<%}%>

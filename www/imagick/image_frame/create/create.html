@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>Imagick.ImageFrame.Create</title>
+        <style type='text/css'>
+            body {font-family: verdana}
+        </style>
+	</head>
+	<body>
+	    <h1>Imagick.ImageFrame.Create Demo</h1>
+		<form id='create' action=''></form>
+		<div id='image_frames'></div>
+		<script type='text/javascript' 
+                src='../../../steal/steal.js'>
+        </script>
+		<script type='text/javascript'>
+			steal('imagick/image_frame/create','imagick/fixtures',function(){
+				
+				$('#create').imagick_image_frame_create();
+				Imagick.Models.ImageFrame.bind('created', function(ev, image_frame){
+					$('<div>').html("<h3>"+image_frame.name+"</h3><p>"+image_frame.description+"</p>")
+					        .appendTo( $('#image_frames') )
+				})
+				
+			})
+		</script>
+	</body>
+</html>

@@ -16,7 +16,7 @@ $.Model('Imagick.Models.Camera',
 	 */
 	create: function(attrs, success, error) {
 		var camera = new THREE.PerspectiveCamera(attrs.viewAngle, attrs.aspect, attrs.near, attrs.far);
-		camera.position.z = -attrs.posZ;
+		camera.position.z = attrs.depth;
 		//success(camera);
 		Imagick.camera = camera;
 	}
